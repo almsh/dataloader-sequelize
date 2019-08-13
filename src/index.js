@@ -496,7 +496,8 @@ function createModelAttributeLoader(Model, attribute, options = {}) {
       where: {
         [attribute]: keys
       },
-      logging: options.logging
+      logging: options.logging,
+      paranoid: options.paranoid
     }).then(mapResult.bind(null, attribute, keys, {}));
   }, {
     cache: true
